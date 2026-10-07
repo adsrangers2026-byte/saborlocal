@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "16948188416",
+    "project_id": "aula-wjgq8h",
+    "storage_bucket": "aula-wjgq8h.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16948188416:android:c0bc0f6b2939a4ccbccfe5",
+        "android_client_info": {
+          "package_name": "com.mycompany.saborlocal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNB037ZuBFCIspV-iB8ZeIPhSzs4pq1ew"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
