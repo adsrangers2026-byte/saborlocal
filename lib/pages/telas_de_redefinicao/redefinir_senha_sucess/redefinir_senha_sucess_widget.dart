@@ -1,7 +1,5 @@
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -37,8 +35,8 @@ class _RedefinirSenhaSucessWidgetState
         extra: <String, dynamic>{
           '__transition_info__': TransitionInfo(
             hasTransition: true,
-            transitionType: PageTransitionType.leftToRight,
-            duration: Duration(milliseconds: 5000),
+            transitionType: PageTransitionType.fade,
+            duration: Duration(milliseconds: 0),
           ),
         },
       );
@@ -72,57 +70,6 @@ class _RedefinirSenhaSucessWidgetState
                   padding: EdgeInsets.all(24.0),
                   child: Stack(
                     children: [
-                      Align(
-                        alignment: AlignmentDirectional(0.22, 0.42),
-                        child: FFButtonWidget(
-                          onPressed: () {
-                            print('butredefsenha pressed ...');
-                          },
-                          text: 'Voltar para o login',
-                          options: FFButtonOptions(
-                            width: MediaQuery.sizeOf(context).width * 0.8,
-                            height: 50.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: Color(0xFFC75B2B),
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .titleSmallFamily,
-                                  color: Colors.white,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: !FlutterFlowTheme.of(context)
-                                      .titleSmallIsCustom,
-                                ),
-                            elevation: 0.0,
-                            borderSide: BorderSide(
-                              color: Color(0xFFC75B2B),
-                            ),
-                            borderRadius: BorderRadius.circular(12.0),
-                          ),
-                        ),
-                      ),
-                      Align(
-                        alignment: AlignmentDirectional(1.06, -0.99),
-                        child: Text(
-                          'Redefinição de senha',
-                          style: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .bodyMediumFamily,
-                                color: Color(0xFF2A0F04),
-                                fontSize: 28.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.bold,
-                                useGoogleFonts: !FlutterFlowTheme.of(context)
-                                    .bodyMediumIsCustom,
-                              ),
-                        ),
-                      ),
                       Align(
                         alignment: AlignmentDirectional(0.0, -0.9),
                         child: Container(
@@ -209,22 +156,6 @@ class _RedefinirSenhaSucessWidgetState
                       ),
                     ],
                   ),
-                ),
-              ),
-              Align(
-                alignment: AlignmentDirectional(-0.95, -0.95),
-                child: FlutterFlowIconButton(
-                  borderRadius: 8.0,
-                  buttonSize: 40.0,
-                  fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                  icon: Icon(
-                    Icons.arrow_back,
-                    color: FlutterFlowTheme.of(context).primaryText,
-                    size: 24.0,
-                  ),
-                  onPressed: () {
-                    print('IconButton pressed ...');
-                  },
                 ),
               ),
             ],

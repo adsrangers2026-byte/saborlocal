@@ -34,24 +34,42 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) => RedefinirSenhaSucessWidget(),
+      errorBuilder: (context, state) => appStateNotifier.showSplashImage
+          ? Builder(
+              builder: (context) => Container(
+                color: Colors.transparent,
+                child: Image.asset(
+                  'assets/images/Si9EU.gif',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            )
+          : NavBarPage(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => RedefinirSenhaSucessWidget(),
+          builder: (context, _) => appStateNotifier.showSplashImage
+              ? Builder(
+                  builder: (context) => Container(
+                    color: Colors.transparent,
+                    child: Image.asset(
+                      'assets/images/Si9EU.gif',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                )
+              : NavBarPage(),
         ),
         FFRoute(
           name: CadastroWidget.routeName,
           path: CadastroWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'Cadastro')
-              : CadastroWidget(
-                  checkbox: params.getParam(
-                    'checkbox',
-                    ParamType.bool,
-                  ),
-                ),
+          builder: (context, params) => CadastroWidget(
+            checkbox: params.getParam(
+              'checkbox',
+              ParamType.bool,
+            ),
+          ),
         ),
         FFRoute(
           name: CepWidget.routeName,
@@ -66,8 +84,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: LoginWidget.routeName,
           path: LoginWidget.routePath,
-          builder: (context, params) =>
-              params.isEmpty ? NavBarPage(initialPage: 'Login') : LoginWidget(),
+          builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
           name: SplashWidget.routeName,
@@ -105,13 +122,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'participantes')
               : ParticipantesWidget(),
-        ),
-        FFRoute(
-          name: MainPageWidget.routeName,
-          path: MainPageWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'mainPage')
-              : MainPageWidget(),
         ),
         FFRoute(
           name: RedefinirSenhaSucessWidget.routeName,

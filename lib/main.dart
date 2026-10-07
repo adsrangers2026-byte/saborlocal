@@ -54,12 +54,17 @@ class _MyAppState extends State<MyApp> {
       _router.routerDelegate.currentConfiguration.matches
           .map((e) => getRoute(e))
           .toList();
+  bool displaySplashImage = true;
+
   @override
   void initState() {
     super.initState();
 
     _appStateNotifier = AppStateNotifier.instance;
     _router = createRouter(_appStateNotifier);
+
+    Future.delayed(Duration(milliseconds: 4000),
+        () => safeSetState(() => _appStateNotifier.stopShowingSplashImage()));
   }
 
   void setLocale(String language) {
@@ -116,7 +121,7 @@ class NavBarPage extends StatefulWidget {
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
   late NavBarModel _navBarModel;
-  String _currentPageName = 'mainPage';
+  String _currentPageName = 'participantes';
   late Widget? _currentPage;
 
   @override
@@ -136,10 +141,7 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'mainPage': MainPageWidget(),
       'participantes': ParticipantesWidget(),
-      'Cadastro': CadastroWidget(),
-      'Login': LoginWidget(),
       'Itens': ItensWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);

@@ -7,8 +7,6 @@ import 'package:flutter/material.dart';
 class LoginModel extends FlutterFlowModel<LoginWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Backend Call - API (Login Teste)] action in Entrar widget.
-  ApiCallResponse? result;
   // State field(s) for senha widget.
   FocusNode? senhaFocusNode;
   TextEditingController? senhaTextController;
@@ -18,6 +16,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   FocusNode? emailFocusNode;
   TextEditingController? emailTextController;
   String? Function(BuildContext, String?)? emailTextControllerValidator;
+  // Stores action output result for [Backend Call - API (Login Teste)] action in Entrar widget.
+  ApiCallResponse? result;
 
   @override
   void initState(BuildContext context) {

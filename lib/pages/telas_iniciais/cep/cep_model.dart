@@ -30,10 +30,6 @@ class CepModel extends FlutterFlowModel<CepWidget> {
   FocusNode? tFBairroFocusNode;
   TextEditingController? tFBairroTextController;
   String? Function(BuildContext, String?)? tFBairroTextControllerValidator;
-  // State field(s) for TF_COMPLEMENTO widget.
-  FocusNode? tfComplementoFocusNode;
-  TextEditingController? tfComplementoTextController;
-  String? Function(BuildContext, String?)? tfComplementoTextControllerValidator;
   // State field(s) for TF_CIDADE widget.
   FocusNode? tfCidadeFocusNode;
   TextEditingController? tfCidadeTextController;
@@ -42,6 +38,10 @@ class CepModel extends FlutterFlowModel<CepWidget> {
   FocusNode? tfUfFocusNode;
   TextEditingController? tfUfTextController;
   String? Function(BuildContext, String?)? tfUfTextControllerValidator;
+  // State field(s) for TF_COMPLEMENTO widget.
+  FocusNode? tfComplementoFocusNode;
+  TextEditingController? tfComplementoTextController;
+  String? Function(BuildContext, String?)? tfComplementoTextControllerValidator;
   // Stores action output result for [Backend Call - API (Endereco)] action in salvar widget.
   ApiCallResponse? apiResultkcu;
 
@@ -62,13 +62,13 @@ class CepModel extends FlutterFlowModel<CepWidget> {
     tFBairroFocusNode?.dispose();
     tFBairroTextController?.dispose();
 
-    tfComplementoFocusNode?.dispose();
-    tfComplementoTextController?.dispose();
-
     tfCidadeFocusNode?.dispose();
     tfCidadeTextController?.dispose();
 
     tfUfFocusNode?.dispose();
     tfUfTextController?.dispose();
+
+    tfComplementoFocusNode?.dispose();
+    tfComplementoTextController?.dispose();
   }
 }
